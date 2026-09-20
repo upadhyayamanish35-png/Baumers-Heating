@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baumers Heating & Air, LLC</title>
+<meta name="description" content="Baumers Heating & Air, LLC - Heating and air conditioning services in Medford and Southern Oregon.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#172033;line-height:1.6;background:linear-gradient(135deg,#eef8ff 0%,#fff 48%,#e9faff 100%)}
+:root{--blue:#123c69;--dark:#09253f;--cyan:#12a8c7;--orange:#f47b20;--light:#f5f8fb;--text:#667085}
+header{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 3px 20px rgba(0,0,0,.08)}
+.navbar{max-width:1180px;margin:auto;padding:14px 25px;display:flex;align-items:center;justify-content:space-between}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{width:58px;height:58px;object-fit:contain;border-radius:10px}
+.logo-fallback{width:58px;height:58px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-weight:800;font-size:18px}
+.logo-text{font-size:20px;font-weight:800;color:var(--blue)}
+.logo-text span{display:block;color:var(--orange);font-size:13px;letter-spacing:1px}
+nav{display:flex;align-items:center;gap:24px}
+nav a{text-decoration:none;color:#26364a;font-weight:600}
+nav a:hover{color:var(--orange)}
+.nav-call{background:linear-gradient(135deg,var(--orange),#ff9d50);color:#fff!important;padding:11px 18px;border-radius:7px}
+.hero{min-height:760px;padding:150px 25px 90px;background:linear-gradient(135deg,rgba(5,23,45,.96) 0%,rgba(12,74,122,.92) 52%,rgba(18,168,199,.78) 100%),url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1800&q=85");background-size:cover;background-position:center;display:flex;align-items:center;color:#fff}
+.hero-container{max-width:1180px;margin:auto;width:100%}
+.hero-content{max-width:720px}
+.location{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);padding:8px 15px;border-radius:30px;margin-bottom:22px;font-size:14px}
+.hero h1{font-size:62px;line-height:1.05;margin-bottom:22px}
+.hero h1 span{color:#7fe8ff}
+.hero p{font-size:19px;color:#e4ebf2;max-width:650px;margin-bottom:30px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:700;transition:.3s}
+.primary{background:linear-gradient(135deg,var(--orange),#ff9d50);color:#fff;box-shadow:0 10px 25px rgba(244,123,32,.25)}
+.primary:hover{transform:translateY(-2px)}
+.white{background:#fff;color:var(--blue)}
+.white:hover{background:#eef2f6}
+.trust{background:rgba(255,255,255,.96);box-shadow:0 5px 25px rgba(0,0,0,.09);position:relative;margin:-45px auto 0;max-width:1050px;border-radius:14px}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:25px}
+.trust-item{text-align:center;border-right:1px solid #e4e8ed}
+.trust-item:last-child{border-right:none}
+.trust-item strong{display:block;font-size:17px;color:var(--blue)}
+.trust-item span{font-size:14px;color:var(--text)}
+section{padding:90px 25px}
+.container{max-width:1180px;margin:auto}
+.section-heading{text-align:center;margin-bottom:50px}
+.section-heading h2{color:var(--blue);font-size:40px;margin-bottom:10px}
+.section-heading p{color:var(--text);max-width:650px;margin:auto}
+.services{background:linear-gradient(135deg,#f7fbff,#eefaff)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.service-card{background:rgba(255,255,255,.92);padding:32px;border-radius:14px;border:1px solid #e8edf2;transition:.3s;box-shadow:0 8px 25px rgba(11,59,112,.05)}
+.service-card:hover{transform:translateY(-7px);box-shadow:0 15px 35px rgba(0,0,0,.08)}
+.service-icon{width:58px;height:58px;background:linear-gradient(135deg,#fff0e6,#e9fbff);color:var(--orange);display:flex;align-items:center;justify-content:center;border-radius:12px;font-size:27px;margin-bottom:20px}
+.service-card h3{color:var(--blue);margin-bottom:10px}
+.service-card p{color:var(--text)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(231,250,255,.72));padding:55px;border-radius:24px}
+.about-image{min-height:470px;border-radius:18px;background:linear-gradient(rgba(9,37,63,.08),rgba(9,37,63,.08)),url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85");background-size:cover;background-position:center}
+.about-content h2{font-size:42px;color:var(--blue);line-height:1.15;margin-bottom:20px}
+.about-content p{color:var(--text);margin-bottom:18px}
+.check{margin:12px 0;font-weight:600}
+.check span{color:var(--cyan);margin-right:8px}
+.cta{background:linear-gradient(120deg,var(--dark),var(--blue) 60%,#118fae);text-align:center;color:#fff}
+.cta h2{font-size:42px;margin-bottom:12px}
+.cta p{color:#dce7f0;margin-bottom:28px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact h2{color:var(--blue);font-size:40px;line-height:1.15;margin-bottom:18px}
+.contact-intro{color:var(--text);margin-bottom:30px}
+.contact-item{margin:22px 0}
+.contact-item strong{display:block;color:var(--blue);margin-bottom:4px}
+.contact-item a{color:var(--text);text-decoration:none}
+.contact-item a:hover{color:var(--orange)}
+.contact-form{background:linear-gradient(135deg,#f7fbff,#eefaff);padding:32px;border-radius:15px;border:1px solid #e2edf3}
+.contact-form h3{color:var(--blue);margin-bottom:20px}
+input,textarea{width:100%;padding:14px;margin-bottom:15px;border:1px solid #d8e0e8;border-radius:7px;font-size:15px;outline:none}
+input:focus,textarea:focus{border-color:var(--cyan)}
+textarea{height:130px;resize:none}
+button{border:none;cursor:pointer;font-size:15px}
+footer{background:#071c30;color:#bfcbd7;padding:35px 25px;text-align:center}
+.footer-name{color:#fff;font-weight:700;margin-bottom:7px}
+.footer-phone{color:#7fe8ff;font-weight:bold}
+.mobile-menu{display:none;font-size:27px;cursor:pointer}
+@media(max-width:850px){nav{display:none}.mobile-menu{display:block}.hero h1{font-size:45px}.trust{margin:0 20px}.trust-grid{grid-template-columns:1fr;gap:20px}.trust-item{border-right:none;border-bottom:1px solid #e4e8ed;padding-bottom:15px}.trust-item:last-child{border-bottom:none}.service-grid{grid-template-columns:1fr}.about,.contact{grid-template-columns:1fr}.about{padding:28px}.about-image{min-height:330px}.section-heading h2,.contact h2,.about-content h2,.cta h2{font-size:32px}}
+</style>
+</head>
+<body>
+<header>
+<div class="navbar">
+<div class="logo-area">
+<img src="logo.png" alt="Baumers Heating & Air logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="logo-fallback" style="display:none">BH</div>
+<div class="logo-text">Baumers Heating & Air<span>LLC</span></div>
+</div>
+<nav>
+<a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+<a class="nav-call" href="tel:+15419511449">Call Now</a>
+</nav>
+<div class="mobile-menu">☰</div>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-container"><div class="hero-content">
+<div class="location">📍 Medford & Southern Oregon</div>
+<h1>Comfort You Can <span>Count On.</span></h1>
+<p>Professional heating and air conditioning services for homes and businesses. From repairs and maintenance to system installation, we're here to help keep your space comfortable.</p>
+<div class="buttons">
+<a href="tel:+15419511449" class="btn primary">📞 Call (541) 951-1449</a>
+<a href="#contact" class="btn white">Request Service</a>
+</div>
+</div></div>
+</section>
+
+<div class="trust"><div class="trust-grid">
+<div class="trust-item"><strong>Heating & Cooling</strong><span>Professional HVAC Service</span></div>
+<div class="trust-item"><strong>Medford, Oregon</strong><span>Serving Southern Oregon</span></div>
+<div class="trust-item"><strong>Call for Service</strong><span>(541) 951-1449</span></div>
+</div></div>
+
+<section class="services" id="services">
+<div class="container">
+<div class="section-heading"><h2>Our HVAC Services</h2><p>Reliable heating and cooling solutions designed to keep your home or business comfortable.</p></div>
+<div class="service-grid">
+<div class="service-card"><div class="service-icon">❄️</div><h3>Air Conditioning</h3><p>AC installation, repairs, troubleshooting, maintenance and cooling system service.</p></div>
+<div class="service-card"><div class="service-icon">🔥</div><h3>Heating Services</h3><p>Heating system repairs, installation and maintenance for year-round comfort.</p></div>
+<div class="service-card"><div class="service-icon">🔧</div><h3>HVAC Repairs</h3><p>Professional diagnosis and repair for heating and cooling system problems.</p></div>
+<div class="service-card"><div class="service-icon">⚙️</div><h3>System Installation</h3><p>Installation solutions for new heating and cooling systems.</p></div>
+<div class="service-card"><div class="service-icon">💨</div><h3>Mini-Split Systems</h3><p>Ductless heating and cooling solutions for a variety of spaces.</p></div>
+<div class="service-card"><div class="service-icon">🛠️</div><h3>Maintenance</h3><p>Routine HVAC maintenance to help keep your system operating efficiently.</p></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container about">
+<div class="about-image"></div>
+<div class="about-content">
+<h2>Keeping Southern Oregon Comfortable</h2>
+<p>Baumers Heating & Air, LLC provides heating and air-conditioning services for customers in the Medford area and surrounding Southern Oregon communities.</p>
+<p>Whether your system needs a repair, regular maintenance, or you're considering a new heating or cooling system, the focus is on dependable service and practical solutions.</p>
+<div class="check"><span>✓</span> Heating & cooling services</div>
+<div class="check"><span>✓</span> Residential HVAC solutions</div>
+<div class="check"><span>✓</span> Repair & maintenance</div>
+<div class="check"><span>✓</span> Installation services</div>
+<br><a href="tel:+15419511449" class="btn primary">Talk With Us</a>
+</div>
+</div>
+</section>
+
+<section class="cta"><div class="container"><h2>Need HVAC Service?</h2><p>Let's get your home or business comfortable again.</p><a href="tel:+15419511449" class="btn primary">Call (541) 951-1449</a></div></section>
+
+<section id="contact">
+<div class="container contact">
+<div>
+<h2>Let's Talk About Your HVAC Needs</h2>
+<p class="contact-intro">Have a heating or cooling issue? Get in touch with Baumers Heating & Air, LLC.</p>
+<div class="contact-item"><strong>📞 Phone</strong><a href="tel:+15419511449">(541) 951-1449</a></div>
+<div class="contact-item"><strong>📍 Location</strong><span>Medford, Oregon</span></div>
+<div class="contact-item"><strong>🕐 Hours</strong><span>Contact the business for current hours.</span></div>
+</div>
+<div class="contact-form">
+<h3>Request Service</h3>
+<form onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="email" placeholder="Email Address">
+<textarea placeholder="How can we help?" required></textarea>
+<button type="submit" class="btn primary">Send Request</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-name">Baumers Heating & Air, LLC</div>
+<div>Medford, Oregon • Heating & Air Conditioning</div>
+<div class="footer-phone">(541) 951-1449</div>
+<p style="margin-top:15px;font-size:13px">© 2026 Baumers Heating & Air, LLC. All Rights Reserved.</p>
+</footer>
+
+<script>
+function submitForm(event){
+event.preventDefault();
+alert("Thank you! Your request has been received. Please call (541) 951-1449 for immediate assistance.");
+}
+</script>
+</body>
+</html>
